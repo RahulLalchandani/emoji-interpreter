@@ -7,14 +7,14 @@ const emojiDictionary = {
   "😔": "sad",
   "🥡": "takeout box",
   "❤️": "love",
-  "😑": "annoyance"
+  "😑": "annoyance",
 };
 
 const emojis = Object.keys(emojiDictionary);
 
 export default function App() {
   const [emoji, setEmoji] = useState("");
-  const [meaning, setMeaning] = useState("translation will appear here..");
+  const [meaning, setMeaning] = useState("Translation will appear here..");
 
   function changeHandler(event) {
     const inputEmoji = event.target.value;
@@ -23,7 +23,7 @@ export default function App() {
     if (inputEmoji in emojiDictionary) {
       setMeaning(emojiDictionary[inputEmoji]);
     } else {
-      setMeaning("failure to recognise this emoji");
+      setMeaning("Failed to recognise this emoji");
     }
   }
 
@@ -40,7 +40,7 @@ export default function App() {
         placeholder={"Search your emoji"}
         style={{
           padding: "1em",
-          minWidth: "80%"
+          minWidth: "80%",
         }}
       />
       <h2> {emoji} </h2> {/** Concept 1: JSX */}
